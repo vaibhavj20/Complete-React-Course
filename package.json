@@ -1,0 +1,29 @@
+{
+  "name": "react_course",
+  "version": "1.0.0",
+  "description": "React-Course",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vaibhavj20/Complete-React-Course.git"
+  },
+  "keywords": [
+    "react-course"
+  ],
+  "author": "Vaibhav Jamdhade",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vaibhavj20/Complete-React-Course/issues"
+  },
+  "homepage": "https://github.com/vaibhavj20/Complete-React-Course#readme",
+  "devDependencies": {
+    "parcel": "^2.12.0",
+    "process": "^0.11.10"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}
