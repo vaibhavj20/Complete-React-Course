@@ -99,12 +99,12 @@ const Body = () => {
   return restaurantList.length === 0 ? (
     <Shimmer />
   ) : (
-    <div className="body">
-      <div className="filter">
-        <div className="search">
+    <div className="body max-w-[1180] m-auto">
+      <div className="filter flex">
+        <div className="search m-4 p-4">
           <input
             type="text"
-            className="searchBox"
+            className="searchBox border border-solid border-black"
             value={searchText}
             onChange={(event) => {
               setSearchText(event.target.value);
@@ -112,6 +112,7 @@ const Body = () => {
           />
 
           <button
+            className="px-4 py-2 bg-orange-100 m-4 rounded-lg"
             onClick={() => {
               //filter the restaurants cards and update the UI
               console.log(searchText);
@@ -126,26 +127,28 @@ const Body = () => {
             Search
           </button>
         </div>
-        <button
-          className="filter-btn"
-          onClick={() => {
-            // console.log("Button was clicked");
+        <div className=" m-4 p-4 flex items-center ">
+          <button
+            className="px-4 py-2 bg-gray-100 rounded-lg"
+            onClick={() => {
+              // console.log("Button was clicked");
 
-            //filter logic
+              //filter logic
 
-            const filteredList = restaurantList.filter(
-              (res) => res.info.avgRating > 4
-            );
+              const filteredList = restaurantList.filter(
+                (res) => res.info.avgRating > 4
+              );
 
-            console.log(filteredList);
+              console.log(filteredList);
 
-            setFilteredRestaurant(filteredList);
-          }}
-        >
-          Top Rated Restaurants
-        </button>
+              setFilteredRestaurant(filteredList);
+            }}
+          >
+            Top Rated Restaurants
+          </button>
+        </div>
       </div>
-      <div className="res-container">
+      <div className="flex flex-wrap ">
         {/* <RestaurantCard resData={resList[0]} />
           <RestaurantCard resData={resList[1]} />
           <RestaurantCard resData={resList[2]} />
