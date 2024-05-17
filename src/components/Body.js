@@ -1,9 +1,10 @@
-import RestaurantCard from "./RestaurantCard";
+import RestaurantCard, { withPromotedLabel } from "./RestaurantCard";
 // import { useEffect } from "react";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
+import UserContext from "../utils/UserContext";
 
 const Body = () => {
   //normal js variable
@@ -59,6 +60,10 @@ const Body = () => {
 
   const [searchText, setSearchText] = useState("");
 
+  // console.log(restaurantList);
+
+  const RestaurantCardPromoted = withPromotedLabel(RestaurantCard);
+
   useEffect(() => {
     fetchData();
   }, []);
@@ -71,7 +76,7 @@ const Body = () => {
 
     const json = await data.json();
 
-    console.log(json);
+    // console.log(json);
     setrestaurantList(
       //optional chaining
       json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
@@ -95,6 +100,8 @@ const Body = () => {
       <h1>Looks like you're offline ! Please check your internet connection</h1>
     );
   }
+
+  const { loggedInUser, setUserName } = useContext(UserContext);
 
   return restaurantList.length === 0 ? (
     <Shimmer />
@@ -147,6 +154,16 @@ const Body = () => {
             Top Rated Restaurants
           </button>
         </div>
+
+        {/** live username */}
+        <div className=" m-4 p-4 flex items-center ">
+          <label className="p-2">User Name: </label>
+          <input
+            className="border border-black p-1"
+            value={loggedInUser}
+            onChange={(e) => setUserName(e.target.value)}
+          />
+        </div>
       </div>
       <div className="flex flex-wrap ">
         {/* <RestaurantCard resData={resList[0]} />
@@ -164,7 +181,11 @@ const Body = () => {
             to={"/restaurants/" + restaurant.info.id}
           >
             {" "}
-            <RestaurantCard resData={restaurant} />
+            {restaurant.info.promoted ? (
+              <RestaurantCardPromoted resData={restaurant} />
+            ) : (
+              <RestaurantCard resData={restaurant} />
+            )}
           </Link>
         ))}
       </div>
