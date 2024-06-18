@@ -23,6 +23,11 @@ Plan With Vaby is a React-based application designed to help users explore and m
 - When all destinations have been removed, a "Refresh" button will appear.
 - Clicking the "Refresh" button will reload the initial list of destinations, allowing users to start the selection process over.
 
+## Snapshots 
+![pwv-ss-1](https://github.com/vaibhavj20/Complete-React-Course/assets/85863405/e4aa856b-7fb5-4dab-a41f-cc1432e34e02)
+
+![pwv-ss-2](https://github.com/vaibhavj20/Complete-React-Course/assets/85863405/6f5cc74b-f9b6-4d45-88a0-2b66798f508c)
+
 ## Summary
 
 Plan With Vaby offers a simple and intuitive interface for users to browse, manage, and refresh a list of travel destinations, helping them plan their next adventure with ease.
