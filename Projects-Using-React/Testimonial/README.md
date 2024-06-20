@@ -9,8 +9,16 @@ This project showcases a testimonials section using React.js and Tailwind CSS. I
 ## Screenshots
 
 ### Desktop View
+![testimonial-3](https://github.com/vaibhavj20/Complete-React-Course/assets/85863405/4fdedd78-f4b9-4dee-8b8a-9efd8e1601a0)
+
+
+![testimonial-2](https://github.com/vaibhavj20/Complete-React-Course/assets/85863405/628bf0aa-4b7d-4c9a-85ac-acb5d8c20373)
+
 
 ### Mobile View
+
+![testimonial-mobile-view](https://github.com/vaibhavj20/Complete-React-Course/assets/85863405/c3bfc117-0c1a-4b21-9361-2a085955282a)
+
 
 ## Summary
 
