@@ -28,7 +28,7 @@ class About extends React.Component {
   render() {
     // console.log("Parent Render");
     return (
-      <div className="bg-white shadow-lg rounded-lg w-[450px] h-[450px] mx-auto p-6 mt-8 my-auto font-Poppins boder-solid border-2 border-brown">
+      <div className="bg-white shadow-lg rounded-lg w-[450px] h-[450px] mx-auto p-6 mt-8 my-auto font-Poppins boder-solid border-2 border-brown mb-10">
         {/* <User name={"Vaibhav Jamdhade(function)"} location={"Nashik(fn)"} /> */}
         {/* <div>
           
