@@ -5,6 +5,7 @@
 This project is a web application built using React.js and Tailwind CSS, designed as a Courses Dashboard to manage and showcase various courses. Users can browse courses, view details, interact with liking functionality, and filter courses based on categories.
 
 ## Live Link
+https://courses-dashboard-vj.netlify.app/
 
 ## Screenshots
 
