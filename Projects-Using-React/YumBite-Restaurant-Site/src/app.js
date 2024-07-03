@@ -14,6 +14,7 @@ import { Provider } from "react-redux";
 import appStore from "./utils/appStore";
 
 import Cart from "./components/Cart";
+import Footer from "./components/Footer";
 
 // import Grocery from "./components/Grocery";
 
@@ -130,6 +131,7 @@ const AppLayout = () => {
           {/* <Body /> */}
 
           <Outlet />
+          <Footer />
         </div>
       </UserContext.Provider>
     </Provider>
