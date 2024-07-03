@@ -14,7 +14,7 @@ import React from "react";
 
 const Contact = () => {
   return (
-    <div className=" w-[800px] bg-white p-8 rounded-lg shadow-xl mt-16 mx-auto ">
+    <div className=" w-[800px] bg-white p-8 rounded-lg shadow-xl mt-16 mx-auto mb-10">
       <h1 className="text-2xl font-bold mb-6 text-center text-Medium-Brown">
         Contact Us
       </h1>
