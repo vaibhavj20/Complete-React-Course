@@ -1,11 +1,11 @@
 import React from "react";
-import Sidenav from "./templates/Sidenav";
+import SideNav from "./templates/SideNav";
 import TopNav from "./templates/TopNav";
 
 const Home = () => {
   return (
     <>
-      <Sidenav />
+      <SideNav />
       <div className="w-[80%] h-full ">
         <TopNav />
       </div>
