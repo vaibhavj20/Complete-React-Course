@@ -1,48 +1,29 @@
-// import React, { useState } from "react";
-// import { Link } from "react-router-dom";
-
-// const TopNav = () => {
-//   const [query, setquery] = useState("");
-//   console.log(query);
-//   return (
-//     <div className="w-full h-[10vh] relative flex justify-start items-center ml-[15%]">
-//       <i class=" text-zinc-400 text-3xl ri-search-line"></i>
-//       <input
-//         onChange={(e) => setquery(e.target.value)}
-//         value={query}
-//         type="text"
-//         className="w-[50%] text-zinc-200 mx-10 p-5 text-xl outline-none border-none bg-transparent"
-//         placeholder="Search anything"
-//       />
-//       {query.length > 0 && (
-//         <i
-//           onClick={() => setquery("")}
-//           class="cursor-pointer text-zinc-400 text-3xl ri-close-fill"
-//         ></i>
-//       )}
-
-//       <div className="absolute w-[50%] max-h-[50vh] bg-zinc-200 top-[90%] overflow-auto rounded">
-//         <Link className="font-semibold text-zinc-600 bg-zinc-200 w-[100%] p-10 flex justify-start  border-b-2 border-zinc-100 hover:text-black hover:bg-zinc-300">
-//           <img src="" alt="" />
-//           <span>Hello Everyone</span>
-//         </Link>
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default TopNav;
-
-import React, { useState } from "react";
+import axios from "../../utils/axios";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import noimage from "../../utils/images/noimage.jpg";
 
 const TopNav = () => {
   const [query, setQuery] = useState("");
-  console.log(query);
+  const [searches, setSearches] = useState([]);
+
+  const GetSearches = async () => {
+    try {
+      const { data } = await axios.get(`/search/multi?query=${query}`);
+      console.log(data.results);
+      setSearches(data.results);
+    } catch (error) {
+      console.log("Error :", error);
+    }
+  };
+
+  useEffect(() => {
+    GetSearches();
+  }, [query]);
 
   return (
     <div className="w-full h-[10vh] relative flex justify-start items-center ml-[15%]">
-      <i className="text-zinc-400 text-xl ri-search-line"></i>
+      <i className="text-zinc-400 text-[23px] ri-search-line"></i>
       <div className="flex items-center w-[50%] mx-10">
         <input
           onChange={(e) => setQuery(e.target.value)}
@@ -54,15 +35,39 @@ const TopNav = () => {
         {query.length > 0 && (
           <i
             onClick={() => setQuery("")}
-            className="cursor-pointer text-zinc-400 text-xl ri-close-fill ml-2"
+            className="cursor-pointer text-zinc-400 text-[23px] ri-close-fill ml-2"
           ></i>
         )}
       </div>
-      <div className="absolute w-[50%] max-h-[50vh] bg-zinc-200 top-[90%] overflow-auto rounded shadow-lg">
-        <Link className="font-semibold text-zinc-600 bg-zinc-200 w-full p-4 flex justify-start items-center border-b-2 border-zinc-100 hover:text-black hover:bg-zinc-300">
-          <img src="" alt="" className="mr-2" />
-          <span>Hello Everyone</span>
-        </Link>
+      <div className="absolute w-[55%] max-h-[50vh] bg-zinc-200 top-[90%] overflow-auto rounded shadow-lg">
+        {searches.map((search, index) => (
+          <Link
+            key={index}
+            className="font-semibold text-zinc-600 bg-zinc-200 w-full p-4 flex justify-start items-center border-b-2 border-zinc-100 hover:text-black hover:bg-zinc-300"
+          >
+            <img
+              className="w-[10vh] h-[10vh] rounded mr-5 object-cover"
+              src={
+                search.backdrop_path ||
+                search.profile_path ||
+                search.poster_path
+                  ? `https://image.tmdb.org/t/p/original/${
+                      search.backdrop_path ||
+                      search.profile_path ||
+                      search.poster_path
+                    }`
+                  : noimage
+              }
+              alt=""
+            />
+            <span>
+              {search.name ||
+                search.title ||
+                search.original_name ||
+                search.original_title}
+            </span>
+          </Link>
+        ))}
       </div>
     </div>
   );
