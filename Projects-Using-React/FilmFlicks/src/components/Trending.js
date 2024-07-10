@@ -53,7 +53,7 @@ const Trending = () => {
           <div className="bg-[#232325] rounded-full flex items-center justify-center w-12 h-12">
             <i
               onClick={() => navigate(-1)}
-              className="text-[19px] text-white p-3 hover:text-purple-400 ri-arrow-left-line cursor-pointer"
+              className=" text-[19px] font-bold text-white p-3 hover:text-purple-400 ri-arrow-left-line cursor-pointer"
             ></i>
           </div>
           <h1 className="text-2xl text-white font-bold">Trending</h1>
@@ -83,10 +83,14 @@ const Trending = () => {
         dataLength={trending.length}
         next={getTrending}
         hasMore={hasMore}
-        loader={<h1 className="text-center text-white">Loading...</h1>}
+        loader={
+          <h1 className="h-10 text-center font-bold text-[#6556CD] bg-[#1F1E24]">
+            Loading...
+          </h1>
+        }
         endMessage={<h1 className="text-center text-white">No more items</h1>}
       >
-        <Cards data={trending} />
+        <Cards data={trending} title={category} />
       </InfiniteScroll>
     </div>
   ) : (
