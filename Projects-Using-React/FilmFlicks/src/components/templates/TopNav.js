@@ -181,7 +181,7 @@ const TopNav = () => {
           onChange={(e) => setQuery(e.target.value)}
           value={query}
           type="text"
-          className="w-full text-zinc-200 p-2 text-lg outline-none border-none bg-transparent"
+          className="w-full text-zinc-200 p-2 text-lg outline-none border-none bg-transparent "
           placeholder="Search anything"
         />
         {query.length > 0 && (
@@ -194,6 +194,7 @@ const TopNav = () => {
           <div className="absolute w-full max-w-[calc(100%-1.9rem)] max-h-[50vh] bg-zinc-200 top-[100%] left-0 overflow-auto rounded shadow-lg z-10 mt-2">
             {searches.map((search, index) => (
               <Link
+                to={`/${search.media_type}/details/${search.id}`}
                 key={index}
                 className="font-semibold text-zinc-600 bg-zinc-200 w-full p-4 flex justify-start items-center border-b-2 border-zinc-100 hover:text-black hover:bg-zinc-300"
               >
