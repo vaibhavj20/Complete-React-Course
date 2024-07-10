@@ -2,7 +2,7 @@ import React from "react";
 
 const TrendingShimmer = () => {
   return (
-    <div className="animate-pulse w-full h-full">
+    <div className="animate-pulse w-full h-full overflow-y-hidden">
       <div className="flex items-center bg-[#2b2a31] p-4  mb-4 h-[110px]">
         <div className="ml-5 w-12 h-12 bg-[#454449] rounded-full"></div>
         <div className="w-[190px] ml-6 h-10 bg-[#454449] rounded mr-5"></div>
