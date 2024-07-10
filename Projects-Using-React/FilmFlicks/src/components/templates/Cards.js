@@ -38,45 +38,45 @@
 
 /*-----------------------------------------------trainer -above---------------------------------*/
 
-import React from "react";
-import { Link } from "react-router-dom";
+// import React from "react";
+// import { Link } from "react-router-dom";
 
-const Cards = ({ data }) => {
-  console.log(data);
-  return (
-    <div className="flex flex-wrap justify-center w-full h-full p-8 bg-[#1F1E24]">
-      {data.map((card, index) => (
-        <Link
-          key={index}
-          className="w-60 m-4 bg-[#2b2a31] hover:bg-gray-700 rounded-lg overflow-hidden shadow-lg transform hover:scale-105 transition-transform duration-300 relative"
-        >
-          <img
-            className="h-80 w-full object-cover"
-            src={`https://image.tmdb.org/t/p/original/${
-              card.profile_path || card.poster_path || card.backdrop_path
-            }`}
-            alt={card.title || card.name}
-          />
-          <div className="p-4 bg-[#454449]">
-            <h1 className="text-xl text-white font-bold truncate">
-              {card.name ||
-                card.title ||
-                card.original_name ||
-                card.original_title}
-            </h1>
-          </div>
-          {card.vote_average && (
-            <div className="absolute top-2 right-2 text-white bg-yellow-400 rounded-full w-10 h-10 flex items-center justify-center text-lg font-semibold shadow-md">
-              {(card.vote_average * 10).toFixed()}%
-            </div>
-          )}
-        </Link>
-      ))}
-    </div>
-  );
-};
+// const Cards = ({ data }) => {
+//   console.log(data);
+//   return (
+//     <div className="flex flex-wrap justify-center w-full h-full p-8 bg-[#1F1E24]">
+//       {data.map((card, index) => (
+//         <Link
+//           key={index}
+//           className="w-60 m-4 bg-[#2b2a31] hover:bg-gray-700 rounded-lg overflow-hidden shadow-lg transform hover:scale-105 transition-transform duration-300 relative"
+//         >
+//           <img
+//             className="h-80 w-full object-cover"
+//             src={`https://image.tmdb.org/t/p/original/${
+//               card.profile_path || card.poster_path || card.backdrop_path
+//             }`}
+//             alt={card.title || card.name}
+//           />
+//           <div className="p-4 bg-[#454449]">
+//             <h1 className="text-xl text-white font-bold truncate">
+//               {card.name ||
+//                 card.title ||
+//                 card.original_name ||
+//                 card.original_title}
+//             </h1>
+//           </div>
+//           {card.vote_average && (
+//             <div className="absolute top-2 right-2 text-white bg-yellow-400 rounded-full w-10 h-10 flex items-center justify-center text-lg font-semibold shadow-md">
+//               {(card.vote_average * 10).toFixed()}%
+//             </div>
+//           )}
+//         </Link>
+//       ))}
+//     </div>
+//   );
+// };
 
-export default Cards;
+// export default Cards;
 
 /** ----------------------GPT------------------------------------ BELOW -----------*/
 // import React from "react";
@@ -129,3 +129,45 @@ export default Cards;
 // };
 
 // export default Cards;
+/**-----------------------------------yeh ab below wala jo space de raha card woh sambhal raha ahun  */
+import React from "react";
+import { Link } from "react-router-dom";
+
+const Cards = ({ data, title }) => {
+  console.log(title);
+
+  return (
+    <div className="flex flex-wrap justify-center w-full h-full p-8 bg-[#1F1E24]">
+      {data.map((card, index) => (
+        <Link
+          to={`/${data.media_type || title}/details/${card.id}`}
+          key={index}
+          className="w-60 m-4 bg-[#2b2a31] hover:bg-gray-700 rounded-lg overflow-hidden shadow-lg transform hover:scale-105 transition-transform duration-300 relative"
+        >
+          <img
+            className="h-80 w-full object-cover"
+            src={`https://image.tmdb.org/t/p/original/${
+              card.profile_path || card.poster_path || card.backdrop_path
+            }`}
+            alt={card.title || card.name}
+          />
+          <div className="p-4 bg-[#454449]">
+            <h1 className="text-xl text-white font-bold truncate">
+              {card.name ||
+                card.title ||
+                card.original_name ||
+                card.original_title}
+            </h1>
+          </div>
+          {card.vote_average !== undefined && card.vote_average !== null && (
+            <div className="absolute top-2 right-2 text-white bg-yellow-400 rounded-full w-11 h-11 flex items-center justify-center text-lg font-semibold shadow-md">
+              {`${(card.vote_average * 10).toFixed()}%`}
+            </div>
+          )}
+        </Link>
+      ))}
+    </div>
+  );
+};
+
+export default Cards;
