@@ -38,14 +38,16 @@
 // export default HorizontalCards;
 
 import React from "react";
+import { Link } from "react-router-dom";
 
 const HorizontalCards = ({ data }) => {
-  console.log(data);
+  //console.log(data);
 
   return (
     <div className="w-full flex overflow-x-auto mb-5 p-5">
       {data.map((data, index) => (
-        <div
+        <Link
+          to={`/${data.media_type}/details/${data.id}`}
           key={index}
           className="min-w-[17%] bg-zinc-900 mr-5 mb-5  overflow-hidden"
         >
@@ -70,7 +72,7 @@ const HorizontalCards = ({ data }) => {
               <span className="text-zinc-500"> more</span>
             </p>
           </div>
-        </div>
+        </Link>
       ))}
     </div>
   );
