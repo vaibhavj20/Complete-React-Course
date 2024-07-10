@@ -36,14 +36,14 @@ const SideNav = () => {
           Movies
         </Link>
         <Link
-          to="/tvShows"
+          to="/tv"
           className="hover:bg-[#6556CD] hover:text-white duration-300 rounded-lg p-2"
         >
           <i className="mr-2 ri-tv-2-fill"></i>
           Tv Shows
         </Link>
         <Link
-          to="/peoples"
+          to="/person"
           className="hover:bg-[#6556CD] hover:text-white duration-300 rounded-lg p-2 mb-5"
         >
           <i className="mr-2 ri-team-fill"></i>
