@@ -44,7 +44,7 @@ const HorizontalCards = ({ data }) => {
   //console.log(data);
 
   return (
-    <div className="w-full flex overflow-x-auto mb-5 p-5">
+    <div className="w-full flex overflow-x-auto mb-5 p-5 ">
       {data.map((data, index) => (
         <Link
           to={`/${data.media_type}/details/${data.id}`}
