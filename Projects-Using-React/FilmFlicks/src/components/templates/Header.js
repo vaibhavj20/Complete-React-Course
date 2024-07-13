@@ -15,7 +15,7 @@ const Header = ({ data }) => {
       }}
       className="w-full h-[50vh] flex flex-col justify-center items-start p-[5%] pt-[10%]"
     >
-      <h1 className="w-[70%] text-5xl font-black text-white ">
+      <h1 className="w-[70%] text-[43px] font-black text-white ">
         {data.name || data.title || data.original_name || data.original_title}
       </h1>
       <p className="w-[70%] mt-5 mb-3 text-white">
@@ -33,7 +33,7 @@ const Header = ({ data }) => {
         <i className="ml-5 text-yellow-500 ri-disc-fill"></i>{" "}
         {data.media_type.toUpperCase()}
       </p>
-      <Link className=" bg-[#6556CD] hover:bg-purple-700 p-3 rounded text-white  mt-5 ">
+      <Link className=" bg-[#6556CD] hover:bg-[#4e40aa] p-3 rounded text-white  mt-5 ">
         Watch Trailer
       </Link>
     </div>
