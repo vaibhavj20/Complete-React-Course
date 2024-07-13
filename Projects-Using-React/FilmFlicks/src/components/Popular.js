@@ -6,7 +6,7 @@ import TopNav from "./templates/TopNav";
 import Dropdown from "./templates/Dropdown";
 import InfiniteScroll from "react-infinite-scroll-component";
 import Cards from "./templates/Cards";
-import TrendingShimmer from "./templates/TrendingShimmer";
+import CardsShimmer from "./templates/CardsShimmer";
 const Popular = () => {
   const navigate = useNavigate();
   const [category, setCategory] = useState("movie");
@@ -85,7 +85,7 @@ const Popular = () => {
       </InfiniteScroll>
     </div>
   ) : (
-    <TrendingShimmer />
+    <CardsShimmer />
   );
 };
 
