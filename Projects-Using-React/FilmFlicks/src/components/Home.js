@@ -5,7 +5,7 @@ import axios from "../utils/axios";
 import Header from "./templates/Header";
 import HorizontalCards from "./templates/HorizontalCards";
 import Dropdown from "./templates/Dropdown";
-import Loading from "./Loading";
+import HomeShimmer from "./HomeShimmer";
 
 const Home = () => {
   const [wallpaper, setWallpaper] = useState(null);
@@ -62,7 +62,7 @@ const Home = () => {
       </div>
     </>
   ) : (
-    <Loading />
+    <HomeShimmer />
   );
 };
 
