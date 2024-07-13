@@ -5,7 +5,7 @@ import Dropdown from "./templates/Dropdown";
 import axios from "../utils/axios";
 import Cards from "./templates/Cards";
 import InfiniteScroll from "react-infinite-scroll-component";
-import TrendingShimmer from "./templates/TrendingShimmer";
+import CardsShimmer from "./templates/CardsShimmer";
 
 const TvShows = () => {
   const navigate = useNavigate();
@@ -86,7 +86,7 @@ const TvShows = () => {
       </InfiniteScroll>
     </div>
   ) : (
-    <TrendingShimmer />
+    <CardsShimmer />
   );
 };
 
