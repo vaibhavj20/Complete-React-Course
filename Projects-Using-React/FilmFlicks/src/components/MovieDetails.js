@@ -229,7 +229,7 @@ const MovieDetails = () => {
           alt=""
         />
         <div className="flex flex-col space-y-4 flex-grow">
-          <h1 className="text-5xl font-black">
+          <h1 className="text-4xl font-black">
             {info.detail.name ||
               info.detail.title ||
               info.detail.original_name ||
@@ -270,9 +270,9 @@ const MovieDetails = () => {
               {info.detail.runtime} min
             </h1>
           </div>
-          <h1 className="text-2xl">Overview</h1>
+          <h1 className="text-xl">Overview</h1>
           <hr className="text-zinc-500" />
-          <p className="mb-10">{info.detail.overview}</p>
+          <p>{info.detail.overview}</p>
           <Link
             className="font-bold p-3 w-[20%] rounded bg-purple-600 hover:bg-purple-700 text-white flex items-center"
             to={`${pathname}/trailer`}
