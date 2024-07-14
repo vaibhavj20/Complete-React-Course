@@ -22,8 +22,8 @@ const CardsShimmer = () => {
               <div className="h-[320px] w-full bg-[#2b2a31] animate-pulse"></div>
 
               <div className="p-6 bg-[#454449] relative">
-                <div className="h-6 w-3/4 bg-[#3e3c46] animate-pulse mb-2"></div>
-                <div className="h-4 w-1/2 bg-[#3e3c46] animate-pulse"></div>
+                <div className="h-6 w-3/4 bg-[#37363a] animate-pulse mb-2"></div>
+                <div className="h-4 w-1/2 bg-[#37363a] animate-pulse"></div>
               </div>
             </div>
           ))}
