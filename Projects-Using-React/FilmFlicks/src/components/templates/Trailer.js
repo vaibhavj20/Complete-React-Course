@@ -19,6 +19,7 @@ const Trailer = () => {
             className="text-white absolute text-2xl font-bold p-2 hover:text-purple-400 ri-close-fill cursor-pointer rounded-full bg-black bg-opacity-50 right-[5%] top-[5%]"
           />
           <ReactPlayer
+            controls
             height={550}
             width={1000}
             url={`https://www.youtube.com/watch?v=${ytVideo.key}`}
