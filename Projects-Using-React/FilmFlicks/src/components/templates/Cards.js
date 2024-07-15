@@ -2,10 +2,9 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
+import noImageAvailable from "../../utils/images/noimage.jpg";
 
 const Cards = ({ data, title }) => {
-  console.log(title);
-
   const getColor = (value) => {
     if (value >= 70) return "#77dd77";
     if (value >= 30) return "#f8e71c";
@@ -16,16 +15,20 @@ const Cards = ({ data, title }) => {
     <div className="flex flex-wrap justify-center w-full h-full p-8 bg-[#1F1E24]">
       {data.map((card, index) => (
         <Link
-          to={`/${data.media_type || title}/details/${card.id}`}
+          to={`/${card.media_type || title}/details/${card.id}`}
           key={index}
           className="w-60 m-4 bg-[#2b2a31] hover:bg-gray-700 rounded-lg overflow-hidden shadow-lg transform hover:scale-105 transition-transform duration-300 relative"
         >
           <img
-            className="h-[320px] w-full object-cover"
-            src={`https://image.tmdb.org/t/p/original/${
-              card.profile_path || card.poster_path || card.backdrop_path
-            }`}
-            alt={card.title || card.name}
+            className="h-[320px] w-full object-cover object-center"
+            src={
+              card.poster_path || card.backdrop_path || card.profile_path
+                ? `https://image.tmdb.org/t/p/original/${
+                    card.poster_path || card.backdrop_path || card.profile_path
+                  }`
+                : noImageAvailable
+            }
+            alt={card.title || card.name || "No Image Available"}
           />
           <div className="p-6 bg-[#454449] relative">
             <h1 className="text-xl text-white font-bold truncate">
@@ -35,7 +38,9 @@ const Cards = ({ data, title }) => {
                 card.original_title}
             </h1>
             <p className="text-sm text-gray-400">
-              {new Date(card.release_date).toLocaleDateString(undefined, {
+              {new Date(
+                card.release_date || card.first_air_date
+              ).toLocaleDateString(undefined, {
                 year: "numeric",
                 month: "short",
                 day: "numeric",
