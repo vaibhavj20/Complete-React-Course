@@ -1,24 +1,3 @@
-// import React from "react";
-// import { useNavigate } from "react-router-dom";
-
-// const NotFound = () => {
-//   const navigate = useNavigate();
-//   return (
-//     <div>
-//       <button
-//         onClick={() => navigate(-1)}
-//         className="text-white absolute text-2xl font-bold p-2 hover:text-purple-400 ri-close-fill cursor-pointer rounded-full bg-black bg-opacity-50 right-[5%] top-[5%]"
-//       />
-
-//       <div className="text-white text-center mt-5 font-black tetx-3xl">
-//         Not Found
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default NotFound;
-
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
