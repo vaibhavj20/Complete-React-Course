@@ -34,13 +34,10 @@ const Trending = () => {
   };
 
   const refreshHandler = () => {
-    if (trending.length === 0) {
-      getTrending();
-    } else {
-      setPage(1);
-      setTrending([]);
-      getTrending();
-    }
+    setPage(1);
+    setTrending([]);
+    setHasMore(true);
+    getTrending();
   };
 
   useEffect(() => {
