@@ -10,7 +10,7 @@ const HorizontalCards = ({ data }) => {
           <Link
             to={`/${item.media_type}/details/${item.id}`}
             key={index}
-            className="min-w-[18%] h-[38vh] bg-zinc-900 mr-5 mb-5 overflow-hidden relative"
+            className="min-w-[18%] h-[38vh] bg-zinc-900 mr-5 mb-5 overflow-hidden relative p-2 rounded"
             style={{ transition: "transform 0.3s ease-in-out" }}
           >
             <img
