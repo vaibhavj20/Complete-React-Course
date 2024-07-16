@@ -8,7 +8,7 @@ export const personSlice = createSlice({
   name: "person",
   initialState,
   reducers: {
-    loaPerson: (state, action) => {
+    loadPerson: (state, action) => {
       state.info = action.payload;
     },
     removePerson: (state, action) => {
@@ -17,6 +17,6 @@ export const personSlice = createSlice({
   },
 });
 
-export const { loaPerson, removePerson } = personSlice.actions;
+export const { loadPerson, removePerson } = personSlice.actions;
 
 export default personSlice.reducer;
