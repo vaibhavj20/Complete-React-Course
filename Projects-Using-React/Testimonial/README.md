@@ -10,7 +10,13 @@ This project showcases a testimonials section using React.js and Tailwind CSS. I
 
 ### Desktop View
 
+![alt text](testimonial-1.png)
+
+![alt text](testimonial-2.png)
+
 ### Mobile View
+
+![alt text](testimonial-mobile-view.jpg)
 
 ## Summary
 
